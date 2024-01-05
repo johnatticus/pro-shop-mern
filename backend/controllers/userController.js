@@ -12,7 +12,7 @@ const authUser = asyncHandler(async (req, res) => {
 
   if (user && (await user.matchPassword(password))) {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-      expiresIn: '1d',
+      expiresIn: '30d',
     });
 
     // Set JWT as an HTTP-Only cookie
