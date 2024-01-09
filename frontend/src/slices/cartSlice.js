@@ -43,7 +43,11 @@ const initialState = localStorage.getItem('cart')
       savePaymentMethod: (state, action) => {
         state.paymentMethod = action.payload;
         localStorage.setItem('cart', JSON.stringify(state));
-      },   
+      },
+      clearCartItems: (state, action) => {
+        state.cartItems = []
+        localStorage.setItem('cart', JSON.stringify(state))
+      },
     },
   });
   
@@ -53,4 +57,5 @@ const initialState = localStorage.getItem('cart')
     removeFromCart,
     saveShippingAddress,
     savePaymentMethod,
+    clearCartItems,
   } = cartSlice.actions;
