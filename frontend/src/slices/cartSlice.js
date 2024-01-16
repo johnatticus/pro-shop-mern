@@ -48,6 +48,7 @@ const initialState = localStorage.getItem('cart')
         state.cartItems = []
         localStorage.setItem('cart', JSON.stringify(state))
       },
+      resetCart: (state) => (state = initialState),
     },
   });
   
@@ -58,4 +59,5 @@ const initialState = localStorage.getItem('cart')
     saveShippingAddress,
     savePaymentMethod,
     clearCartItems,
+    resetCart,
   } = cartSlice.actions;
